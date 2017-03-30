@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import AFNetworking
 
 class PhotosViewController: UIViewController, UITableViewDataSource {
 
@@ -56,6 +57,8 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
                             self.posts = photosFetched
                         }
 
+                        self.photosTableView.reloadData()
+
                         // This is where you will store the returned array of posts in your posts property
                         // self.feeds = responseFieldDictionary["posts"] as! [NSDictionary]
                     }
@@ -72,15 +75,23 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
 
         let post = posts[indexPath.row]
 
-        if let posts = post.value(forKeyPath: "photos") as? [NSDictionary] {
-            //
-        } else {
-            //
+        if let photos = post.value(forKeyPath: "photos") as? [NSDictionary] {
+
+             let imageUrlString = photos[0].value(forKeyPath: "original_size.url") as? String
+
+            if let imageUrl = URL(string: imageUrlString!) {
+
+                cell.photoImageView.setImageWith(imageUrl)
+            }
+
         }
+
+        return cell
     }
 
     /*
