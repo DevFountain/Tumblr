@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import AFNetworking
 
-class PhotosViewController: UIViewController, UITableViewDataSource {
+class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var posts: [NSDictionary] = []
     @IBOutlet weak var photosTableView: UITableView!
@@ -117,7 +117,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
     // MARK: Table view data source
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -138,6 +138,40 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
         }
 
         return cell
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return posts.count
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
+
+        let profileView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        profileView.clipsToBounds = true
+        profileView.layer.cornerRadius = 15;
+        profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).cgColor
+        profileView.layer.borderWidth = 1;
+
+        // set the avatar
+        profileView.setImageWith(URL(string:"https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/avatar")!)
+        headerView.addSubview(profileView)
+
+        // Add a UILabel for the date here
+        // Use the section number to get the right URL
+        let textToDisplay = posts[section]["date"] as! String
+        let labelField = UILabel(frame: CGRect(x: 50, y: 10, width: 100, height: 30))
+        labelField.text = textToDisplay
+
+        headerView.addSubview(labelField)
+
+        return headerView
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
     }
 
     // MARK: - Navigation
