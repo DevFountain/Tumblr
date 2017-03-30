@@ -94,14 +94,29 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "PhotoFullScreen" {
+
+            let vc = segue.destination as! PhotoDetailsViewController
+            let indexPath = photosTableView.indexPath(for: sender as! PhotoCell)!
+
+            let post = posts[indexPath.row]
+
+            if let photos = post.value(forKeyPath: "photos") as? [NSDictionary] {
+
+                let imageUrlString = photos[0].value(forKeyPath: "original_size.url") as? String
+
+                if let imageUrl = URL(string: imageUrlString!) {
+                    vc.photoURL = imageUrl
+                }
+            }
+
+        }
     }
-    */
 
 }
