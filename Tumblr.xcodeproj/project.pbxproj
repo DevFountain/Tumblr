@@ -12,6 +12,7 @@
 		E938C0C61E8CA2920012ED19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E938C0C41E8CA2920012ED19 /* Main.storyboard */; };
 		E938C0C81E8CA2920012ED19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E938C0C71E8CA2920012ED19 /* Assets.xcassets */; };
 		E938C0CB1E8CA2920012ED19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E938C0C91E8CA2920012ED19 /* LaunchScreen.storyboard */; };
+		E9C2143D1E8CACEB00EAE6B5 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C2143C1E8CACEB00EAE6B5 /* PhotoCell.swift */; };
 		E9FD14AF1E8CA85D00DFAE2D /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD14AE1E8CA85D00DFAE2D /* PhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		E938C0C71E8CA2920012ED19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E938C0CA1E8CA2920012ED19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E938C0CC1E8CA2920012ED19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9C2143C1E8CACEB00EAE6B5 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		E9FD14AE1E8CA85D00DFAE2D /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 			children = (
 				E938C0C01E8CA2920012ED19 /* AppDelegate.swift */,
 				E9FD14AE1E8CA85D00DFAE2D /* PhotosViewController.swift */,
+				E9C2143C1E8CACEB00EAE6B5 /* PhotoCell.swift */,
 				E938C0C41E8CA2920012ED19 /* Main.storyboard */,
 				E938C0C71E8CA2920012ED19 /* Assets.xcassets */,
 				E938C0C91E8CA2920012ED19 /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E938C0C11E8CA2920012ED19 /* AppDelegate.swift in Sources */,
+				E9C2143D1E8CACEB00EAE6B5 /* PhotoCell.swift in Sources */,
 				E9FD14AF1E8CA85D00DFAE2D /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

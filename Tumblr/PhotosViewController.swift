@@ -9,9 +9,10 @@
 import UIKit
 import Foundation
 
-class PhotosViewController: UIViewController {
+class PhotosViewController: UIViewController, UITableViewDataSource {
 
     var posts: [NSDictionary] = []
+    @IBOutlet weak var photosTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,24 @@ class PhotosViewController: UIViewController {
         });
         task.resume()
 
+    }
+
+    // MARK: Table view data source
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
+
+        let post = posts[indexPath.row]
+
+        if let posts = post.value(forKeyPath: "photos") as? [NSDictionary] {
+            //
+        } else {
+            //
+        }
     }
 
     /*
