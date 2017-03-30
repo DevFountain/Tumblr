@@ -129,7 +129,6 @@
 				TargetAttributes = {
 					E938C0BC1E8CA2920012ED19 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = X9M5Y5BW7N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -345,7 +344,7 @@
 			baseConfigurationReference = 0FCE7D4334DC7136FF7D36E0 /* Pods-Tumblr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = X9M5Y5BW7N;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tumblr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devfountain.Tumblr;
@@ -359,7 +358,7 @@
 			baseConfigurationReference = 3B76DBF98849D4562C293A4E /* Pods-Tumblr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = X9M5Y5BW7N;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tumblr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devfountain.Tumblr;
